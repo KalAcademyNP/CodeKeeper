@@ -16,5 +16,8 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Models\Code.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Defibrillation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Medication.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\PatientInformation.cs" />
   </ItemGroup>
 </Project>
