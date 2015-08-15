@@ -19,7 +19,7 @@ namespace Codekeeper.Models
         /// <summary>
         /// this property stores the date of birth of the patient
         /// </summary>
-        public String DOB { get; set; }
+        public DateTime DOB { get; set; }
 
         /// <summary>
         /// this property stores the gender type of the patient
