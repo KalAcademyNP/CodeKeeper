@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
 
-  <Identity Name="a4d107ee-628e-42ca-bbb0-e4e69b6c896f"
-            Publisher="CN=Kalpanav"
+  <Identity Name="83f9b60e-64d0-4d1d-9a00-4ceac57bf437"
+            Publisher="CN=sindhooja"
             Version="1.0.0.0" />
 
   <Properties>
-    <DisplayName>CodeKeeper.Windows</DisplayName>
-    <PublisherDisplayName>Kalpanav</PublisherDisplayName>
+    <DisplayName>Codekeeper.Windows</DisplayName>
+    <PublisherDisplayName>sindhooja</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
@@ -23,12 +23,12 @@
   <Applications>
     <Application Id="App"
         Executable="$targetnametoken$.exe"
-        EntryPoint="CodeKeeper.Windows.App">
+        EntryPoint="Codekeeper.Windows.App">
         <m2:VisualElements
-            DisplayName="CodeKeeper.Windows"
+            DisplayName="Codekeeper.Windows"
             Square150x150Logo="Assets\Logo.png"
             Square30x30Logo="Assets\SmallLogo.png"
-            Description="CodeKeeper.Windows"
+            Description="Codekeeper.Windows"
             ForegroundText="light"
             BackgroundColor="#464646">
             <m2:SplashScreen Image="Assets\SplashScreen.png" />
