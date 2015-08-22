@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Codekeeper.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -32,8 +33,8 @@ namespace Codekeeper
         {
             //Added validaiton for number
             //Sindhu - you add validation for 0-23 and also do similar checks for minutes
-            uint hour;
-            if (!uint.TryParse(txtHour.Text, out hour))
+            uint hour; //uint means unsigned interger
+            if (uint.TryParse(txtHour.Text, out hour) == false)
             {
                 if (txtHour.Text.Length > 1)
                 {
@@ -49,7 +50,7 @@ namespace Codekeeper
 
         private async void btnStart_Click(object sender, RoutedEventArgs e)
         {
-            MessageDialog md = new MessageDialog("Confirm the CPR start time?");
+            MessageDialog md = new MessageDialog(string.Format("Confirm the CPR start time? {0}:{1}", txtHour.Text, txtMinute.Text)); 
             md.Commands.Add(new UICommand("Yes", YesBtnClick));
             md.Commands.Add(new UICommand("No"));
             await md.ShowAsync();
@@ -58,6 +59,8 @@ namespace Codekeeper
  
         private void YesBtnClick(IUICommand command)
         {
+            Code c = new Code();
+            c.CPRStartTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, int.Parse(txtHour.Text), int.Parse(txtMinute.Text), 0);
             //Sindhu - create a new instance of "Code" here and set its CPR start time to the time that was entered in the hour and minute box
 
         }
