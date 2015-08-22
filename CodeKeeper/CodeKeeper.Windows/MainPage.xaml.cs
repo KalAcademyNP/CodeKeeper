@@ -34,7 +34,7 @@ namespace Codekeeper
             //Added validaiton for number
             //Sindhu - you add validation for 0-23 and also do similar checks for minutes
             uint hour; //uint means unsigned interger
-            if (uint.TryParse(txtHour.Text, out hour) == false)
+            if (!uint.TryParse(txtHour.Text, out hour))
             {
                 if (txtHour.Text.Length > 1)
                 {
@@ -61,9 +61,10 @@ namespace Codekeeper
         {
             Code c = new Code();
             c.CPRStartTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, int.Parse(txtHour.Text), int.Parse(txtMinute.Text), 0);
-            //Sindhu - create a new instance of "Code" here and set its CPR start time to the time that was entered in the hour and minute box
 
+            this.Frame.Navigate(typeof(HomePage), c);
         }
+
 
     }
 }
