@@ -15,9 +15,19 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)CodePage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Code.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Defibrillation.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Medication.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\PatientInformation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TimeTrackerControl.xaml.cs">
+      <DependentUpon>TimeTrackerControl.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)TimeTrackerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 </Project>
