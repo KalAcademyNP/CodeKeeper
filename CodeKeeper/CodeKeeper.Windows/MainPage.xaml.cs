@@ -48,6 +48,23 @@ namespace Codekeeper
 
         }
 
+        private void txtMinute_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            uint minute;
+            if (!uint.TryParse(txtMinute.Text, out minute))
+            {
+                if (txtMinute.Text.Length > 1)
+                {
+                    txtMinute.Text = txtMinute.Text.Substring(0, txtMinute.Text.Length - 1);
+                }
+                else
+                {
+                    txtMinute.Text = string.Empty;
+                }
+            }
+
+        }
+
         private async void btnStart_Click(object sender, RoutedEventArgs e)
         {
             MessageDialog md = new MessageDialog(string.Format("Confirm the CPR start time? {0}:{1}", txtHour.Text, txtMinute.Text)); 
