@@ -20,16 +20,21 @@ namespace Codekeeper
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class HomePage : CodePage
+    public sealed partial class DefibrillationPage : CodePage
     {
-        public HomePage()
+        public DefibrillationPage()
         {
             this.InitializeComponent();
         }
 
-        private void BtnDefibrillation_Click(object sender, RoutedEventArgs e)
+        protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            this.Frame.Navigate(typeof(DefibrillationPage));
+            Button b = new Button();
+            b.Width = 100;
+            b.Height = 100;
+            b.Content = DateTime.Now.TimeOfDay.ToString();
+            lstButtons.Items.Add(b);
+            base.OnNavigatedTo(e);
         }
     }
 }
