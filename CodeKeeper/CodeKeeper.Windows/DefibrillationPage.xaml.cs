@@ -32,6 +32,7 @@ namespace Codekeeper
             Button b = new Button();
             b.Width = 100;
             b.Height = 100;
+            
             b.Content = DateTime.Now.TimeOfDay.ToString();
             lstButtons.Items.Add(b);
             base.OnNavigatedTo(e);

@@ -34,7 +34,7 @@ namespace Codekeeper
             //Added validaiton for number
             //Sindhu - you add validation for 0-23 and also do similar checks for minutes
             uint hour; //uint means unsigned interger
-            if (!uint.TryParse(txtHour.Text, out hour))
+            if (!uint.TryParse(txtHour.Text, out hour) || (hour < 0 || hour > 23))
             {
                 if (txtHour.Text.Length > 1)
                 {
@@ -45,7 +45,6 @@ namespace Codekeeper
                     txtHour.Text = string.Empty;
                 }
             }
-
         }
 
         private void txtMinute_TextChanged(object sender, TextChangedEventArgs e)

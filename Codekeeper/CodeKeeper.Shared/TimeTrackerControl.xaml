@@ -22,6 +22,7 @@
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="CPR Start Time" VerticalAlignment="Top" Margin="1,41,0,0" FontSize="20" Height="64" Width="130"/>
         <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0,41,0,0" TextWrapping="Wrap" Text="Current Time" VerticalAlignment="Top" Height="64" Width="132"/>
         <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="0,41,0,0" TextWrapping="Wrap" Text="Elapsed Time" VerticalAlignment="Top" Height="64" Width="137"/>
+        <TextBlock x:Name="lblCprTime" HorizontalAlignment="Left" Margin="10,110,0,0" Grid.RowSpan="2" TextWrapping="Wrap"  VerticalAlignment="Top" Height="35" Width="111"/>
 
     </Grid>
 </UserControl>

@@ -19,6 +19,19 @@ namespace Codekeeper
 {
     public sealed partial class TimeTrackerControl : UserControl
     {
+        private string cprStartTime;
+        public string CPRStartTime
+        {
+            get
+            {
+                return cprStartTime;
+            }
+            set
+            {
+                cprStartTime = value;
+                lblCprTime.Text = cprStartTime;
+            }
+        }
         public TimeTrackerControl()
         {
             this.InitializeComponent();
