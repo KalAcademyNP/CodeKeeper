@@ -41,6 +41,12 @@ namespace Codekeeper
 
             }
 
+            Button now = new Button();
+            now.Width = 100;
+            now.Height = 100;
+            now.Content = DateTime.Now.TimeOfDay.ToString(@"hh\:mm");
+            lstButtons.Items.Add(now);
+
             base.OnNavigatedTo(e);
         }
     }
