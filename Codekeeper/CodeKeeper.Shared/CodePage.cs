@@ -12,7 +12,7 @@ namespace Codekeeper
     public class CodePage:Page
     {
         public static CodePage Current;
-        public Code CurrentCode { get; set; }
+        public static Code CurrentCode;
 
         public CodePage()
         {
@@ -36,7 +36,7 @@ namespace Codekeeper
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            if (e != null)
+            if (e != null && e.Parameter != null)
             {
                 CurrentCode = e.Parameter as Code;
             }

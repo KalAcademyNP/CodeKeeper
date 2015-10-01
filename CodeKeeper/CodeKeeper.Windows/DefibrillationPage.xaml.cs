@@ -29,12 +29,18 @@ namespace Codekeeper
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            Button b = new Button();
-            b.Width = 100;
-            b.Height = 100;
-            
-            b.Content = DateTime.Now.TimeOfDay.ToString();
-            lstButtons.Items.Add(b);
+            DateTime tempTime = CurrentCode.CPRStartTime;
+            for (int i = 0; i <= 30; i++)
+            {
+                Button b = new Button();
+                b.Width = 100;
+                b.Height = 100;
+                b.Content = tempTime.TimeOfDay.ToString(@"hh\:mm");
+                tempTime = tempTime.AddMinutes(1);
+                lstButtons.Items.Add(b);
+
+            }
+
             base.OnNavigatedTo(e);
         }
     }
