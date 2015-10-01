@@ -50,7 +50,7 @@ namespace Codekeeper
         private void txtMinute_TextChanged(object sender, TextChangedEventArgs e)
         {
             uint minute;
-            if (!uint.TryParse(txtMinute.Text, out minute))
+            if (!uint.TryParse(txtMinute.Text, out minute) || (minute < 0 || minute >59))
             {
                 if (txtMinute.Text.Length > 1)
                 {
