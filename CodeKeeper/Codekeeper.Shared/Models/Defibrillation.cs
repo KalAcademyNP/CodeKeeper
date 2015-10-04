@@ -6,5 +6,6 @@ namespace Codekeeper.Models
 {
     class Defibrillation
     {
+
     }
 }

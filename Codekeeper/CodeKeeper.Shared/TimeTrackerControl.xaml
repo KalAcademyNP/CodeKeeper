@@ -19,10 +19,10 @@
             <ColumnDefinition Width="132*"/>
             <ColumnDefinition Width="137*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock TextWrapping="Wrap" Text="CPR Start Time" Margin="1,41,0,0" FontSize="14.667" Height="64" Width="130" FontFamily="Century Gothic" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0,41,0,0" TextWrapping="Wrap" Text="Current Time" VerticalAlignment="Top" Height="64" Width="132" FontSize="14.667" FontFamily="Century Gothic"/>
-        <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="0,41,0,0" TextWrapping="Wrap" Text="Elapsed Time" VerticalAlignment="Top" Height="64" Width="137" FontSize="14.667" FontFamily="Century Gothic"/>
-        <TextBlock x:Name="lblCprTime" HorizontalAlignment="Left" Margin="1,70,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="35" Width="111"/>
+        <TextBlock TextWrapping="Wrap" Text="CPR Start Time" Margin="1,41,0,0" FontSize="18.667" Height="64" Width="194" FontFamily="Century Gothic" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0,41,0,0" TextWrapping="Wrap" Text="Current Time" VerticalAlignment="Top" Height="64" Width="200" FontSize="18.667" FontFamily="Century Gothic"/>
+        <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="0,41,0,0" TextWrapping="Wrap" Text="Elapsed Time" VerticalAlignment="Top" Height="64" Width="200" FontSize="18.667" FontFamily="Century Gothic"/>
+        <TextBlock x:Name="lblCprTime" HorizontalAlignment="Left" Margin="1,70,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="35" Width="175" FontSize="16"/>
 
     </Grid>
 </UserControl>

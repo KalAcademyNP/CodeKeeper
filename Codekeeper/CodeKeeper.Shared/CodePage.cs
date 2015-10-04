@@ -25,7 +25,7 @@ namespace Codekeeper
             AppBar timeTracker = new AppBar();
             timeTracker.Background = new SolidColorBrush(new Color { A = 33, R = 118, G = 15, B = 5 });
             var ttControl = new TimeTrackerControl();
-            ttControl.CPRStartTime = CurrentCode.CPRStartTime.ToString();
+            ttControl.CPRStartTime = CurrentCode.CPRStartTime.ToString(@"MM/dd/yyyy H\:mm");
             timeTracker.Content = ttControl;
 
             timeTracker.IsOpen = true;
