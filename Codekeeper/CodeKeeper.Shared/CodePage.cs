@@ -13,6 +13,7 @@ namespace Codekeeper
     {
         public static CodePage Current;
         public static Code CurrentCode;
+        public static Defibrillation CurrentDefibrillation;
 
         public CodePage()
         {
@@ -41,6 +42,10 @@ namespace Codekeeper
                 CurrentCode = e.Parameter as Code;
             }
 
+            if (CurrentDefibrillation == null)
+            {
+                CurrentDefibrillation = new Defibrillation();
+            }
             base.OnNavigatedTo(e);
         }
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Codekeeper.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -40,6 +41,7 @@ namespace Codekeeper
                 tempTime = tempTime.AddMinutes(1);
                 lstButtons.Items.Add(b);
                 b.Background = new SolidColorBrush(new Color { A = 100, R = 245, G = 124, B = 89 });
+                b.Click += RecordDefibrillation_Click;
             }
 
             Button now = new Button();
@@ -48,8 +50,14 @@ namespace Codekeeper
             now.Content = DateTime.Now.TimeOfDay.ToString(@"hh\:mm");
             lstButtons.Items.Add(now);
             now.Background = new SolidColorBrush(new Color { A = 100, R = 245, G = 124, B = 89 });
-
+            now.Click += RecordDefibrillation_Click;
             base.OnNavigatedTo(e);
+        }
+
+        private void RecordDefibrillation_Click(object sender, RoutedEventArgs e)
+        {
+            var b = sender as Button;
+            CurrentDefibrillation.Resuscitations.Add(new Resuscitation { TimeRecorded = b.Content, TypeOfResuscitation = ResuscitationType.IO });
         }
     }
 }

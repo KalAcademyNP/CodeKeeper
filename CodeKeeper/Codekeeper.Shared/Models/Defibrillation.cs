@@ -4,8 +4,9 @@ using System.Text;
 
 namespace Codekeeper.Models
 {
-    class Defibrillation
+    public class Defibrillation
     {
+        public List<Resuscitation> Resuscitations { get; set; }
 
     }
 }
