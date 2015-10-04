@@ -23,7 +23,7 @@ namespace Codekeeper
         {
             Current = this;
             AppBar timeTracker = new AppBar();
-            timeTracker.Background = new SolidColorBrush(new Color { A = 33, R = 3, G = 0, B = 0 });
+            timeTracker.Background = new SolidColorBrush(new Color { A = 33, R = 118, G = 15, B = 5 });
             var ttControl = new TimeTrackerControl();
             ttControl.CPRStartTime = CurrentCode.CPRStartTime.ToString();
             timeTracker.Content = ttControl;
