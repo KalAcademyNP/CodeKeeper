@@ -9,7 +9,7 @@
     mc:Ignorable="d">
 
     <Grid Background="#FFEE1C08">
-        <Button x:Name="BtnDefibrillation" Content="Defibrillation" HorizontalAlignment="Left" Margin="155,176,0,0" VerticalAlignment="Top" Height="104" Width="259" Click="BtnDefibrillation_Click"  />
+        <Button x:Name="BtnDefibrillation" Content="Defibrillation" HorizontalAlignment="Left" Margin="155,176,0,0" VerticalAlignment="Top" Height="104" Width="259" Click="BtnDefibrillation_Click" Background="#FFF57C59" FontSize="32" FontFamily="Century Gothic" FontWeight="Normal"  />
 
     </Grid>
 </code:CodePage>
