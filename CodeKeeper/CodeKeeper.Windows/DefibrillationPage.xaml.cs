@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -38,6 +39,7 @@ namespace Codekeeper
                 b.Content = tempTime.TimeOfDay.ToString(@"hh\:mm");
                 tempTime = tempTime.AddMinutes(1);
                 lstButtons.Items.Add(b);
+                b.Background = new SolidColorBrush(new Color { A = 100, R = 245, G = 124, B = 89 });
             }
 
             Button now = new Button();
@@ -45,6 +47,7 @@ namespace Codekeeper
             now.Height = 100;
             now.Content = DateTime.Now.TimeOfDay.ToString(@"hh\:mm");
             lstButtons.Items.Add(now);
+            now.Background = new SolidColorBrush(new Color { A = 100, R = 245, G = 124, B = 89 });
 
             base.OnNavigatedTo(e);
         }
