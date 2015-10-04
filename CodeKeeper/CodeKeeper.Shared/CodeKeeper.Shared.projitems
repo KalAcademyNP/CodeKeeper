@@ -20,6 +20,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\Defibrillation.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Medication.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\PatientInformation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Resuscitation.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TimeTrackerControl.xaml.cs">
       <DependentUpon>TimeTrackerControl.xaml</DependentUpon>
     </Compile>
