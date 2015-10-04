@@ -8,7 +8,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="#FFEE1C08">
         <Button x:Name="BtnDefibrillation" Content="Defibrillation" HorizontalAlignment="Left" Margin="155,176,0,0" VerticalAlignment="Top" Height="104" Width="259" Click="BtnDefibrillation_Click"  />
 
     </Grid>
