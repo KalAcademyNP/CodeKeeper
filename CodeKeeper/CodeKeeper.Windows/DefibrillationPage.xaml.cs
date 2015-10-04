@@ -38,7 +38,6 @@ namespace Codekeeper
                 b.Content = tempTime.TimeOfDay.ToString(@"hh\:mm");
                 tempTime = tempTime.AddMinutes(1);
                 lstButtons.Items.Add(b);
-
             }
 
             Button now = new Button();
