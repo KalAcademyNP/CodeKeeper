@@ -34,30 +34,29 @@ namespace Codekeeper
             DateTime tempTime = CurrentCode.CPRStartTime;
             for (int i = 0; i <= 30; i++)
             {
-                Button b = new Button();
-                b.Width = 100;
-                b.Height = 100;
-                b.Content = tempTime.TimeOfDay.ToString(@"hh\:mm");
                 tempTime = tempTime.AddMinutes(1);
-                lstButtons.Items.Add(b);
-                b.Background = new SolidColorBrush(new Color { A = 100, R = 245, G = 124, B = 89 });
-                b.Click += RecordDefibrillation_Click;
+                AddButton(tempTime);
             }
 
-            Button now = new Button();
-            now.Width = 100;
-            now.Height = 100;
-            now.Content = DateTime.Now.TimeOfDay.ToString(@"hh\:mm");
-            lstButtons.Items.Add(now);
-            now.Background = new SolidColorBrush(new Color { A = 100, R = 245, G = 124, B = 89 });
-            now.Click += RecordDefibrillation_Click;
+            AddButton(DateTime.Now);
             base.OnNavigatedTo(e);
+        }
+
+        private void AddButton(DateTime tempTime)
+        {
+            Button b = new Button();
+            b.Width = 100;
+            b.Height = 100;
+            b.Content = tempTime.TimeOfDay.ToString(@"hh\:mm");
+            b.Background = new SolidColorBrush(new Color { A = 100, R = 245, G = 124, B = 89 });
+            b.Click += RecordDefibrillation_Click;
+            lstButtons.Items.Add(b);
         }
 
         private void RecordDefibrillation_Click(object sender, RoutedEventArgs e)
         {
-            var b = sender as Button;
-            CurrentDefibrillation.Resuscitations.Add(new Resuscitation { TimeRecorded = b.Content, TypeOfResuscitation = ResuscitationType.IO });
+            //var b = sender as Button;
+            //CurrentDefibrillation.Resuscitations.Add(new Resuscitation { TimeRecorded = b.Content, TypeOfResuscitation = ResuscitationType.IO });
         }
     }
 }
