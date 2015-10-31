@@ -15,6 +15,7 @@ namespace Codekeeper
         public static Code CurrentCode;
         public static Defibrillation CurrentDefibrillation;
 
+
         public CodePage()
         {
             Loaded += CodePage_Loaded;
@@ -32,6 +33,11 @@ namespace Codekeeper
             timeTracker.IsOpen = true;
             timeTracker.IsSticky = true;
             this.TopAppBar = timeTracker;
+
+            if (CurrentDefibrillation.Resuscitations == null)
+            {
+                CurrentDefibrillation.Resuscitations = new List<Resuscitation>();
+            }
             
         }
 

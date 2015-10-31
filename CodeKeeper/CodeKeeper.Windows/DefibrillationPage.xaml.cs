@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using WinRTXamlToolkit.Controls;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -55,8 +56,14 @@ namespace Codekeeper
 
         private void RecordDefibrillation_Click(object sender, RoutedEventArgs e)
         {
-            //var b = sender as Button;
-            //CurrentDefibrillation.Resuscitations.Add(new Resuscitation { TimeRecorded = b.Content, TypeOfResuscitation = ResuscitationType.IO });
+            var b = sender as Button;
+            var dialog = new InputDialog();
+            var result = dialog.ShowAsync("Confirmation", "Confirm {0} {1} Placed in {2} at {3}",
+                dialog.InputText, dialog.InputText, dialog.InputText, b.Content.ToString());
+            CurrentDefibrillation.Resuscitations.Add(new Resuscitation
+                { TimeRecorded = b.Content.ToString(),
+                TypeOfResuscitation = ResuscitationType.IO,
+                Placed = "RightAC", Amount = 18 });
         }
     }
 }

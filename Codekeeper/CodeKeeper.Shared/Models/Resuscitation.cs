@@ -12,8 +12,10 @@ namespace Codekeeper.Models
     public class Resuscitation
     {
 
-        public DateTime TimeRecorded { get; set; }
+        public string TimeRecorded { get; set; }
         public ResuscitationType TypeOfResuscitation { get; set; }
+        public string Placed { get; set; }
+        public int Amount { get; set; }
 
     }
 }
