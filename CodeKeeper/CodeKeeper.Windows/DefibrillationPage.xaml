@@ -1,4 +1,4 @@
-﻿<local:CodePage
+﻿<local:CodePage x:Name="stackPanel"
     x:Class="Codekeeper.DefibrillationPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -6,12 +6,13 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d" Background="#FFEE1C08">
-
-    <ListView Name="lstButtons"  Margin="0,100,0,0">
-        <ListView.ItemsPanel>
+    <StackPanel x:Name="outerStack" HorizontalAlignment="Center" Orientation="Vertical">
+    <GridView x:Name="gridView" Margin="0,150,0,0" >
+        <GridView.ItemsPanel>
             <ItemsPanelTemplate>
-                <WrapGrid Orientation="Horizontal" MaximumRowsOrColumns="9"/>
+                <ItemsWrapGrid Orientation="Horizontal" MaximumRowsOrColumns="10" />
             </ItemsPanelTemplate>
-        </ListView.ItemsPanel>
-    </ListView>
+        </GridView.ItemsPanel>
+    </GridView>
+    </StackPanel>
 </local:CodePage>

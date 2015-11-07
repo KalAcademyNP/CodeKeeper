@@ -33,13 +33,20 @@ namespace Codekeeper
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             DateTime tempTime = CurrentCode.CPRStartTime;
-            for (int i = 0; i <= 30; i++)
+            for (int i = 1; i <= 30; i++)
             {
                 tempTime = tempTime.AddMinutes(1);
                 AddButton(tempTime);
             }
 
-            AddButton(DateTime.Now);
+
+            Button b = new Button();
+            b.Width = 1100;
+            b.Height = 100;
+            b.Content = "Now";
+            b.Background = new SolidColorBrush(new Color { A = 100, R = 245, G = 124, B = 89 });
+            b.Click += RecordDefibrillation_Click;
+            outerStack.Children.Add(b);
             base.OnNavigatedTo(e);
         }
 
@@ -51,7 +58,7 @@ namespace Codekeeper
             b.Content = tempTime.TimeOfDay.ToString(@"hh\:mm");
             b.Background = new SolidColorBrush(new Color { A = 100, R = 245, G = 124, B = 89 });
             b.Click += RecordDefibrillation_Click;
-            lstButtons.Items.Add(b);
+            gridView.Items.Add(b);
         }
 
         private void RecordDefibrillation_Click(object sender, RoutedEventArgs e)
