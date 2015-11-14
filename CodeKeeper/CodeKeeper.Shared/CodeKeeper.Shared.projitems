@@ -16,6 +16,10 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)CodePage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CustomDialog.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DefibConfirmation.xaml.cs">
+      <DependentUpon>DefibConfirmation.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Models\Code.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Defibrillation.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Medication.cs" />
@@ -26,6 +30,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)Common\LightStyles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Common\StandardStyles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)DefibConfirmation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="$(MSBuildThisFileDirectory)TimeTrackerControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -7,6 +7,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -14,7 +15,6 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using WinRTXamlToolkit.Controls;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -61,12 +61,18 @@ namespace Codekeeper
             gridView.Items.Add(b);
         }
 
-        private void RecordDefibrillation_Click(object sender, RoutedEventArgs e)
+        private async void RecordDefibrillation_Click(object sender, RoutedEventArgs e)
         {
             var b = sender as Button;
-            var dialog = new InputDialog();
-            var result = dialog.ShowAsync("Confirmation", "Confirm {0} {1} Placed in {2} at {3}",
-                dialog.InputText, dialog.InputText, dialog.InputText, b.Content.ToString());
+            var customDialog = new CustomDialog(new DefibConfirmation(b.Content.ToString()), "Confirm?");
+            customDialog.HeaderBrush = new SolidColorBrush(Colors.Red);
+            customDialog.Commands.Add(new UICommand("Yes"));
+            customDialog.Commands.Add(new UICommand("No"));
+            customDialog.DefaultCommandIndex = 0;
+            customDialog.CancelCommandIndex = 1;
+            await customDialog.ShowAsync();
+
+
             CurrentDefibrillation.Resuscitations.Add(new Resuscitation
                 { TimeRecorded = b.Content.ToString(),
                 TypeOfResuscitation = ResuscitationType.IO,
