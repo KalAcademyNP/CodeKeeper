@@ -7,15 +7,14 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Button x:Name="button" Content="Button" Height="109" Margin="60,42,0,0" VerticalAlignment="Top" Width="280"/>
-        <Button x:Name="button_Copy" Content="Button" Height="109" Margin="431,0,655,253" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" d:LayoutOverrides="LeftPosition, RightPosition"/>
-        <Button x:Name="button_Copy1" Content="Button" Height="109" Margin="60,0,0,253" VerticalAlignment="Bottom" Width="280"/>
-        <Button x:Name="button_Copy2" Content="Button" Height="109" Margin="0,193,254,0" VerticalAlignment="Top" Width="280" HorizontalAlignment="Right"/>
-        <Button x:Name="button_Copy3" Content="Button" Height="109" Margin="0,42,273,0" VerticalAlignment="Top" Width="280" HorizontalAlignment="Right"/>
-        <Button x:Name="button_Copy4" Content="Button" Height="109" Margin="431,193,655,0" VerticalAlignment="Top" HorizontalAlignment="Stretch" d:LayoutOverrides="LeftPosition, RightPosition"/>
-        <Button x:Name="button_Copy5" Content="Button" Height="109" Margin="431,42,655,0" VerticalAlignment="Top" HorizontalAlignment="Stretch" d:LayoutOverrides="LeftPosition, RightPosition"/>
-        <Button x:Name="button_Copy6" Content="Button" Height="109" Margin="45,193,0,0" VerticalAlignment="Top" Width="280"/>
-
+    <Grid Background="#FFEE1C08">
+        <TextBlock x:Name="lblFristName" HorizontalAlignment="Left" Height="41" Margin="87,76,0,0" TextWrapping="Wrap" Text="First Name:" VerticalAlignment="Top" Width="174" FontFamily="Century Gothic" FontSize="32" FontStyle="Italic"/>
+        <TextBlock x:Name="lblLastName" HorizontalAlignment="Left" Height="41" Margin="87,168,0,0" TextWrapping="Wrap" Text="Last Name:" VerticalAlignment="Top" Width="174" FontFamily="Century Gothic" FontSize="32" FontStyle="Italic"/>
+        <TextBox x:Name="txtFirstName" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="296,76,0,0" Height="41" Width="325" FontFamily="Century Gothic" FontSize="21.333" Background="#FFF57C59"/>
+        <TextBox x:Name="txtLastName" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="296,168,0,0" Height="41" Width="325" Background="#FFF57C59"/>
+        <TextBlock x:Name="lblDateOfBirth" HorizontalAlignment="Left" Height="43" Margin="87,272,0,0" TextWrapping="Wrap" Text="Date of Birth:" VerticalAlignment="Top" Width="213" FontFamily="Century Gothic" FontSize="32" FontStyle="Italic"/>
+        <DatePicker Height="43" Margin="296,272,0,0" VerticalAlignment="Top" Width="325" Background="#FFF57C59" RequestedTheme="Dark"/>
+        <TextBlock x:Name="lblGender" HorizontalAlignment="Left" Margin="87,379,0,348" TextWrapping="Wrap" Text="Gender:" Width="174" FontFamily="Century Gothic" FontSize="32" FontStyle="Italic" d:LayoutOverrides="TopPosition, BottomPosition"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="246,379,0,348" Width="191" Background="#CCF57C59"/>
     </Grid>
 </Page>
