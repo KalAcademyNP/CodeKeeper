@@ -19,6 +19,8 @@ namespace Codekeeper
 {
     public sealed partial class DefibConfirmation : UserControl
     {
+        public string ResusicationType { get; set; }
+        public string TimeRecorded { get; set; }
         public DefibConfirmation()
         {
             this.InitializeComponent();
@@ -26,7 +28,17 @@ namespace Codekeeper
 
         public DefibConfirmation(string time) : this()
         {
-            txtDefibTime.Text = time;
+            lblDefibTime.Text = time;
+            TimeRecorded = lblDefibTime.Text;
+            ResusicationType = "IV";
+        }
+
+        private void cbResuscitationType_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cbResuscitationType != null)
+            {
+                ResusicationType = ((ComboBoxItem)cbResuscitationType.SelectedValue).Content.ToString();
+            }
         }
     }
 }

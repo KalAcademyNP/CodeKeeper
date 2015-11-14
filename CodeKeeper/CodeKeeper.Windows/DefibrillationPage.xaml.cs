@@ -25,6 +25,8 @@ namespace Codekeeper
     /// </summary>
     public sealed partial class DefibrillationPage : CodePage
     {
+        private DefibConfirmation confirmationPage;
+
         public DefibrillationPage()
         {
             this.InitializeComponent();
@@ -64,19 +66,25 @@ namespace Codekeeper
         private async void RecordDefibrillation_Click(object sender, RoutedEventArgs e)
         {
             var b = sender as Button;
-            var customDialog = new CustomDialog(new DefibConfirmation(b.Content.ToString()), "Confirm?");
+            confirmationPage = new DefibConfirmation(b.Content.ToString());
+            var customDialog = new CustomDialog(confirmationPage, "Confirm?");
             customDialog.HeaderBrush = new SolidColorBrush(Colors.Red);
-            customDialog.Commands.Add(new UICommand("Yes"));
+            customDialog.Commands.Add(new UICommand("Yes", RecordResuscitation));
             customDialog.Commands.Add(new UICommand("No"));
             customDialog.DefaultCommandIndex = 0;
             customDialog.CancelCommandIndex = 1;
             await customDialog.ShowAsync();
+        }
 
-
+        private void RecordResuscitation(IUICommand command)
+        {
             CurrentDefibrillation.Resuscitations.Add(new Resuscitation
-                { TimeRecorded = b.Content.ToString(),
-                TypeOfResuscitation = ResuscitationType.IO,
-                Placed = "RightAC", Amount = 18 });
+            {
+                TimeRecorded = confirmationPage.TimeRecorded,
+                TypeOfResuscitation = (ResuscitationType)Enum.Parse(typeof(ResuscitationType), confirmationPage.ResusicationType, true),
+                Placed = "RightAC",
+                Amount = 18
+            });
         }
     }
 }

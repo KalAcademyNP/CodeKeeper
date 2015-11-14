@@ -13,7 +13,7 @@
         <Grid MinHeight="220">
             <StackPanel Margin="0,20,0,0" Orientation="Horizontal">
                 <TextBlock Text="Confirm" Foreground="Black" />
-                <ComboBox >
+                <ComboBox Name="cbResuscitationType" SelectionChanged="cbResuscitationType_SelectionChanged" >
                     <ComboBoxItem Name="ic">IC</ComboBoxItem>
                     <ComboBoxItem Name="iv" IsSelected="True">IV</ComboBoxItem>
                 </ComboBox>
@@ -21,7 +21,7 @@
                 <TextBlock Text=" placed in "  Foreground="Black"/>
                 <TextBox Text="right VR" Foreground="Black" />
                 <TextBlock Text=" at "  Foreground="Black"/>
-                <TextBlock Name="txtDefibTime" Text=""  Foreground="Black"/>
+                <TextBlock Name="lblDefibTime" Text=""  Foreground="Black"/>
             </StackPanel>
         </Grid>
     </Grid>
