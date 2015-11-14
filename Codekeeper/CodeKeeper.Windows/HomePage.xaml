@@ -10,7 +10,7 @@
 
     <Grid Background="#FFEE1C08">
         <Button x:Name="BtnDefibrillation" Content="Defibrillation" HorizontalAlignment="Left" Margin="155,176,0,0" VerticalAlignment="Top" Height="104" Width="259" Click="BtnDefibrillation_Click" Background="#FFF57C59" FontSize="32" FontFamily="Century Gothic" FontWeight="Normal"  />
-        <Button x:Name="BtnPatientInformation" Content="Patient&#xD;&#xA;Information" HorizontalAlignment="Stretch" Margin="530,176,577,0" VerticalAlignment="Top" Height="104" Click="BtnDefibrillation_Click" Background="#FFF57C59" FontSize="32" FontFamily="Century Gothic" FontWeight="Normal" d:LayoutOverrides="LeftPosition, RightPosition"  />
+        <Button x:Name="BtnPatientInformation" Content="Patient&#xD;&#xA;Information" HorizontalAlignment="Stretch" Margin="530,176,577,0" VerticalAlignment="Top" Height="104" Click="BtnPatientInformation_Click" Background="#FFF57C59" FontSize="32" FontFamily="Century Gothic" FontWeight="Normal" d:LayoutOverrides="LeftPosition, RightPosition"  />
 
     </Grid>
 </code:CodePage>
