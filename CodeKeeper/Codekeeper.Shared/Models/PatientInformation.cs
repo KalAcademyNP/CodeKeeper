@@ -19,7 +19,7 @@ namespace Codekeeper.Models
         /// <summary>
         /// this property stores the date of birth of the patient
         /// </summary>
-        public DateTime DOB { get; set; }
+        public DateTimeOffset DOB { get; set; }
 
         /// <summary>
         /// this property stores the gender type of the patient
@@ -29,7 +29,7 @@ namespace Codekeeper.Models
         /// <summary>
         /// this property stores the Social Security Number of the patient
         /// </summary>
-        public int SSN { get; set; }
+        public string SSN { get; set; }
 
         /// <summary>
         /// this property stores the Address of the patient

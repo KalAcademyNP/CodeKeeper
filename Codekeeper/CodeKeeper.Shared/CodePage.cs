@@ -14,6 +14,7 @@ namespace Codekeeper
         public static CodePage Current;
         public static Code CurrentCode;
         public static Defibrillation CurrentDefibrillation;
+        public static PatientInformation CurrentPatientInfo;
 
 
         public CodePage()
@@ -51,6 +52,10 @@ namespace Codekeeper
             if (CurrentDefibrillation == null)
             {
                 CurrentDefibrillation = new Defibrillation();
+            }
+            if (CurrentPatientInfo == null)
+            {
+                CurrentPatientInfo = new PatientInformation();
             }
             base.OnNavigatedTo(e);
         }
