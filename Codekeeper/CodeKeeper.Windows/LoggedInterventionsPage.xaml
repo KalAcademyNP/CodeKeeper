@@ -1,0 +1,16 @@
+﻿<local:CodePage
+    x:Class="Codekeeper.LoggedInterventionsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Codekeeper"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button x:Name="BtnDefibrillation" Content="Defibrillation" HorizontalAlignment="Left" Margin="155,176,0,0" VerticalAlignment="Top" Height="104" Width="259"  Background="#FFF57C59" FontSize="32" FontFamily="Century Gothic" FontWeight="Normal"  />
+        <Button x:Name="BtnPatientInformation" Content="Patient&#xD;&#xA;Information" HorizontalAlignment="Stretch" Margin="530,176,577,0" VerticalAlignment="Top" Height="104"  Background="#FFF57C59" FontSize="32" FontFamily="Century Gothic" FontWeight="Normal" d:LayoutOverrides="LeftPosition, RightPosition"  />
+        <Button x:Name="btnHome" Content="Home" HorizontalAlignment="Left" Height="89" Margin="155,0,0,292" VerticalAlignment="Bottom" Click="btnHome_Click" Width="259"/>
+
+    </Grid>
+</local:CodePage>

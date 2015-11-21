@@ -15,7 +15,7 @@ namespace Codekeeper
         public static Code CurrentCode;
         public static Defibrillation CurrentDefibrillation;
         public static PatientInformation CurrentPatientInfo;
-
+        public static Dictionary<string, bool> CurrentInterventions;
 
         public CodePage()
         {
@@ -38,6 +38,12 @@ namespace Codekeeper
             if (CurrentDefibrillation.Resuscitations == null)
             {
                 CurrentDefibrillation.Resuscitations = new List<Resuscitation>();
+            }
+            if (CurrentInterventions == null)
+            {
+                CurrentInterventions = new Dictionary<string, bool>();
+                CurrentInterventions.Add("Defibrillation", false);
+                CurrentInterventions.Add("PatientInfo", false);
             }
             
         }

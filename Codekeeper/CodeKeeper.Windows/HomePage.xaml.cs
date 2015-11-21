@@ -29,12 +29,22 @@ namespace Codekeeper
 
         private void BtnDefibrillation_Click(object sender, RoutedEventArgs e)
         {
+           CurrentInterventions["Defibrillation"] = true;
+            BtnDefibrillation.Visibility = Visibility.Collapsed;
             this.Frame.Navigate(typeof(DefibrillationPage));
         }
 
         private void BtnPatientInformation_Click(object sender, RoutedEventArgs e)
         {
+            CurrentInterventions["PatientInfo"] = true;
+            BtnPatientInformation.Visibility = Visibility.Collapsed;
             this.Frame.Navigate(typeof(PatientPage));
+        }
+
+        private void BtnLoggedIntervention_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(LoggedInterventionsPage));
+
         }
     }
 }
