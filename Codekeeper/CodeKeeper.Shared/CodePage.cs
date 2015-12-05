@@ -19,6 +19,12 @@ namespace Codekeeper
 
         public CodePage()
         {
+            if (CurrentInterventions == null)
+            {
+                CurrentInterventions = new Dictionary<string, bool>();
+                CurrentInterventions.Add("Defibrillation", false);
+                CurrentInterventions.Add("PatientInfo", false);
+            }
             Loaded += CodePage_Loaded;
         }
 
@@ -26,10 +32,17 @@ namespace Codekeeper
         {
             Current = this;
             AppBar timeTracker = new AppBar();
+            var homeButton = new Button();
+            homeButton.Name = "btnHome";
+            homeButton.Click += HomeButton_Click;
+            homeButton.Content = "Home";
+            var sPanel = new StackPanel();
+            sPanel.Children.Add(homeButton);
             timeTracker.Background = new SolidColorBrush(new Color { A = 33, R = 118, G = 15, B = 5 });
             var ttControl = new TimeTrackerControl();
             ttControl.CPRStartTime = CurrentCode.CPRStartTime.ToString(@"MM/dd/yyyy H\:mm");
-            timeTracker.Content = ttControl;
+            sPanel.Children.Add(ttControl);
+            timeTracker.Content = sPanel;
 
             timeTracker.IsOpen = true;
             timeTracker.IsSticky = true;
@@ -39,13 +52,12 @@ namespace Codekeeper
             {
                 CurrentDefibrillation.Resuscitations = new List<Resuscitation>();
             }
-            if (CurrentInterventions == null)
-            {
-                CurrentInterventions = new Dictionary<string, bool>();
-                CurrentInterventions.Add("Defibrillation", false);
-                CurrentInterventions.Add("PatientInfo", false);
-            }
             
+        }
+
+        private void HomeButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(HomePage));
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)

@@ -43,10 +43,14 @@ namespace Codekeeper
             }
         }
 
-        private void btnHome_Click(object sender, RoutedEventArgs e)
+        private void BtnDefibrillation_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(HomePage));
+            this.Frame.Navigate(typeof(DefibrillationPage));
+        }
 
+        private void BtnPatientInformation_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(PatientPage));
         }
     }
 }

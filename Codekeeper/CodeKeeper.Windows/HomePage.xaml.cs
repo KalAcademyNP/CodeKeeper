@@ -25,6 +25,22 @@ namespace Codekeeper
         public HomePage()
         {
             this.InitializeComponent();
+            if (CurrentInterventions["Defibrillation"])
+            {
+                BtnDefibrillation.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                BtnDefibrillation.Visibility = Visibility.Visible;
+            }
+            if (CurrentInterventions["PatientInfo"])
+            {
+                BtnPatientInformation.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                BtnPatientInformation.Visibility = Visibility.Visible;
+            }
         }
 
         private void BtnDefibrillation_Click(object sender, RoutedEventArgs e)

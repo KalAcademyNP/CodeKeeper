@@ -37,5 +37,9 @@ namespace Codekeeper
             this.InitializeComponent();
         }
 
+        private void btnHome_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }
