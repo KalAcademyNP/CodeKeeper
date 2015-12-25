@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.Data.Xml.Dom;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI;
@@ -26,7 +27,7 @@ namespace Codekeeper
     public sealed partial class DefibrillationPage : CodePage
     {
         private DefibConfirmation confirmationPage;
-
+        private XmlElement childElement;
         public DefibrillationPage()
         {
             this.InitializeComponent();
@@ -40,7 +41,6 @@ namespace Codekeeper
                 tempTime = tempTime.AddMinutes(1);
                 AddButton(tempTime);
             }
-
 
             Button b = new Button();
             b.Width = 1100;
@@ -73,18 +73,28 @@ namespace Codekeeper
             customDialog.Commands.Add(new UICommand("No"));
             customDialog.DefaultCommandIndex = 0;
             customDialog.CancelCommandIndex = 1;
-            await customDialog.ShowAsync();
+            var response = await customDialog.ShowAsync();
+            if (response.Label == "Yes")
+            {
+                DefibElement.AppendChild(childElement);
+            }
         }
 
         private void RecordResuscitation(IUICommand command)
         {
-            CurrentDefibrillation.Resuscitations.Add(new Resuscitation
+            var resuscitation = new Resuscitation
             {
                 TimeRecorded = confirmationPage.TimeRecorded,
                 TypeOfResuscitation = (ResuscitationType)Enum.Parse(typeof(ResuscitationType), confirmationPage.ResusicationType, true),
                 Placed = "RightAC",
                 Amount = 18
-            });
-        }
+            };
+            CurrentDefibrillation.Resuscitations.Add(resuscitation);
+            childElement = Report.CreateElement("Resuscitation");
+            childElement.SetAttribute("TimeRecorded", resuscitation.TimeRecorded);
+            childElement.SetAttribute("TypeOfResuscitation", resuscitation.TypeOfResuscitation.ToString());
+            childElement.SetAttribute("Placed", resuscitation.Placed);
+            childElement.SetAttribute("Amount", resuscitation.Amount.ToString());
+       }
     }
 }

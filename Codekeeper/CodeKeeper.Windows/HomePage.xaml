@@ -12,6 +12,7 @@
         <Button x:Name="BtnDefibrillation" Content="Defibrillation" HorizontalAlignment="Left" Margin="155,176,0,0" VerticalAlignment="Top" Height="104" Width="259" Click="BtnDefibrillation_Click" Background="#FFF57C59" FontSize="32" FontFamily="Century Gothic" FontWeight="Normal"  />
         <Button x:Name="BtnPatientInformation" Content="Patient&#xD;&#xA;Information" HorizontalAlignment="Stretch" Margin="530,176,577,0" VerticalAlignment="Top" Height="104" Click="BtnPatientInformation_Click" Background="#FFF57C59" FontSize="32" FontFamily="Century Gothic" FontWeight="Normal" d:LayoutOverrides="LeftPosition, RightPosition"  />
         <Button x:Name="BtnLoggedIntervention" Content="Logged &#xD;&#xA;Interventions" HorizontalAlignment="Right" Margin="0,176,119,0" VerticalAlignment="Top" Height="104" Width="259" Click="BtnLoggedIntervention_Click" Background="#FFF57C59" FontSize="32" FontFamily="Century Gothic" FontWeight="Normal"  />
+        <Button x:Name="BtnGenerateReport" Content="Generate Report" HorizontalAlignment="Left" Margin="155,363,0,0" VerticalAlignment="Top" Height="104" Width="259" Click="BtnGenerateReport_Click" Background="#FFF57C59" FontSize="32" FontFamily="Century Gothic" FontWeight="Normal"  />
 
     </Grid>
 </code:CodePage>

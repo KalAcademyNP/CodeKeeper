@@ -36,6 +36,41 @@ namespace Codekeeper
             CurrentPatientInfo.DOB = dpDOB.Date;
             CurrentPatientInfo.SSN = txtSSN.Text;
 
+            var element = Report.GetElementsByTagName("FirstName").FirstOrDefault();
+            if (element == null)
+            {
+                element = Report.CreateElement("FirstName");
+                PatientInfoElement.AppendChild(element);
+            }
+            element.InnerText = CurrentPatientInfo.FirstName;
+            element = Report.GetElementsByTagName("LastName").FirstOrDefault();
+            if (element == null)
+            {
+                element = Report.CreateElement("LastName");
+                PatientInfoElement.AppendChild(element);
+            }
+            element.InnerText = CurrentPatientInfo.LastName;
+            element = Report.GetElementsByTagName("Gender").FirstOrDefault();
+            if (element == null)
+            {
+                element = Report.CreateElement("Gender");
+                PatientInfoElement.AppendChild(element);
+            }
+            element.InnerText = CurrentPatientInfo.Gender;
+            element = Report.GetElementsByTagName("DOB").FirstOrDefault();
+            if (element == null)
+            {
+                element = Report.CreateElement("DOB");
+                PatientInfoElement.AppendChild(element);
+            }
+            element.InnerText = CurrentPatientInfo.DOB.ToString();
+            element = Report.GetElementsByTagName("SSN").FirstOrDefault();
+            if (element == null)
+            {
+                element = Report.CreateElement("SSN");
+                PatientInfoElement.AppendChild(element);
+            }
+            element.InnerText = CurrentPatientInfo.SSN;
         }
     }
 }

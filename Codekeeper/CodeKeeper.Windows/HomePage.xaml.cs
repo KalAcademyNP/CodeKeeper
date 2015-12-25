@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -61,6 +62,25 @@ namespace Codekeeper
         {
             this.Frame.Navigate(typeof(LoggedInterventionsPage));
 
+        }
+
+        private async void BtnGenerateReport_Click(object sender, RoutedEventArgs e)
+        {
+            MessageDialog md;
+            try
+            {
+                var fileName = await SaveReport();
+                if (!string.IsNullOrEmpty(fileName))
+                {
+                    md = new MessageDialog(string.Format("Report generated at: {0}", fileName));
+                    await md.ShowAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                md = new MessageDialog(string.Format("Sorry, try again. Failed generating report - {0}", ex.Message));
+                await md.ShowAsync();
+            }
         }
     }
 }

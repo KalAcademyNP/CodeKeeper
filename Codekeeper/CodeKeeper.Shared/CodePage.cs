@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
+using Windows.Data.Xml.Dom;
 using Windows.UI;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
@@ -16,6 +18,10 @@ namespace Codekeeper
         public static Defibrillation CurrentDefibrillation;
         public static PatientInformation CurrentPatientInfo;
         public static Dictionary<string, bool> CurrentInterventions;
+        public static XmlDocument Report;
+        public static XmlElement CodeElement;
+        public static XmlElement DefibElement;
+        public static XmlElement PatientInfoElement;
 
         public CodePage()
         {
@@ -28,6 +34,19 @@ namespace Codekeeper
             Loaded += CodePage_Loaded;
         }
 
+        public async Task<string> SaveReport()
+        {
+            //var sf = await Windows.ApplicationModel.Package.Current.InstalledLocation.CreateFolderAsync("Reports");
+            var sf = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync("Reports");
+            if (sf == null)
+            {
+                sf = await Windows.ApplicationModel.Package.Current.InstalledLocation.CreateFolderAsync("Reports");
+            }
+            var fileName = string.Format("CodeReport_{0}_{1}_{2}", CurrentPatientInfo.FirstName, CurrentPatientInfo.LastName, CurrentCode.CPRStartTime.ToString()).Replace('/','_');
+            var file = await sf.CreateFileAsync(fileName);
+            await Report.SaveToFileAsync(file);
+            return file.Path;
+        }
         void CodePage_Loaded(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
             Current = this;
@@ -52,7 +71,6 @@ namespace Codekeeper
             {
                 CurrentDefibrillation.Resuscitations = new List<Resuscitation>();
             }
-            
         }
 
         private void HomeButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
@@ -65,6 +83,17 @@ namespace Codekeeper
             if (e != null && e.Parameter != null)
             {
                 CurrentCode = e.Parameter as Code;
+                if (CurrentCode != null)
+                {
+                    Report = new XmlDocument();
+                    CodeElement = Report.CreateElement("Code");
+                    CodeElement.SetAttribute("CPRStartTime", CurrentCode.CPRStartTime.ToString());
+                    CodeElement.SetAttribute("CPREndTime", CurrentCode.CPREndTime.ToString());
+                    DefibElement = Report.CreateElement("Defibrillation");
+                    PatientInfoElement = Report.CreateElement("PatientInformation");
+                    CodeElement.AppendChild(DefibElement);
+                    CodeElement.AppendChild(PatientInfoElement);
+                }
             }
 
             if (CurrentDefibrillation == null)
