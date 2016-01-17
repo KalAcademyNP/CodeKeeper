@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.Data.Xml.Dom;
+using Windows.Storage;
 using Windows.UI;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
@@ -36,13 +37,13 @@ namespace Codekeeper
 
         public async Task<string> SaveReport()
         {
-            //var sf = await Windows.ApplicationModel.Package.Current.InstalledLocation.CreateFolderAsync("Reports");
-            var sf = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync("Reports");
+            //var cf = await ApplicationData.Current.LocalFolder.CreateFolderAsync("Reports");
+            var sf = await ApplicationData.Current.LocalFolder.GetFolderAsync("Reports");
             if (sf == null)
             {
-                sf = await Windows.ApplicationModel.Package.Current.InstalledLocation.CreateFolderAsync("Reports");
+                sf = await ApplicationData.Current.LocalFolder.CreateFolderAsync("Reports");
             }
-            var fileName = string.Format("CodeReport_{0}_{1}_{2}", CurrentPatientInfo.FirstName, CurrentPatientInfo.LastName, CurrentCode.CPRStartTime.ToString()).Replace('/','_');
+            var fileName = string.Format("CodeReport_{0}_{1}_{2}", CurrentPatientInfo.FirstName, CurrentPatientInfo.LastName, CurrentCode.CPRStartTime.ToString()).Replace('/','_').Replace(':','_');
             var file = await sf.CreateFileAsync(fileName);
             await Report.SaveToFileAsync(file);
             return file.Path;
@@ -93,6 +94,7 @@ namespace Codekeeper
                     PatientInfoElement = Report.CreateElement("PatientInformation");
                     CodeElement.AppendChild(DefibElement);
                     CodeElement.AppendChild(PatientInfoElement);
+                    Report.AppendChild(CodeElement);
                 }
             }
 
