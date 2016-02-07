@@ -9,19 +9,19 @@
     mc:Ignorable="d">
 
     <Grid Background="#FFEE1C08">
-        <TextBlock x:Name="lblFristName" HorizontalAlignment="Left" Height="41" Margin="87,76,0,0" TextWrapping="Wrap" Text="First Name:" VerticalAlignment="Top" Width="174" FontFamily="Century Gothic" FontSize="32" FontStyle="Italic"/>
-        <TextBlock x:Name="lblLastName" HorizontalAlignment="Left" Height="41" Margin="87,168,0,0" TextWrapping="Wrap" Text="Last Name:" VerticalAlignment="Top" Width="174" FontFamily="Century Gothic" FontSize="32" FontStyle="Italic"/>
-        <TextBox x:Name="txtFirstName" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="296,76,0,0" Height="41" Width="325" FontFamily="Century Gothic" FontSize="21.333" Background="#FFF57C59"/>
-        <TextBox x:Name="txtLastName" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="296,168,0,0" Height="41" Width="325" Background="#FFF57C59"/>
-        <TextBlock x:Name="lblDateOfBirth" HorizontalAlignment="Left" Height="43" Margin="87,272,0,0" TextWrapping="Wrap" Text="Date of Birth:" VerticalAlignment="Top" Width="213" FontFamily="Century Gothic" FontSize="32" FontStyle="Italic"/>
-        <DatePicker x:Name="dpDOB" Height="43" Margin="296,272,0,0" VerticalAlignment="Top" Width="325" Background="#FFF57C59" RequestedTheme="Dark"/>
-        <TextBlock x:Name="lblGender" HorizontalAlignment="Left" Margin="87,379,0,348" TextWrapping="Wrap" Text="Gender:" Width="174" FontFamily="Century Gothic" FontSize="32" FontStyle="Italic" d:LayoutOverrides="TopPosition, BottomPosition"/>
-        <ComboBox x:Name="comboBoxGender" HorizontalAlignment="Left" Margin="304,0,0,334" Width="191" Background="#CCF57C59" Height="41" VerticalAlignment="Bottom">
+        <TextBlock x:Name="lblFristName" HorizontalAlignment="Left" Height="41" Margin="87,178,0,0" TextWrapping="Wrap" Text="First Name:" VerticalAlignment="Top" Width="174" FontFamily="Century Gothic" FontSize="32" FontStyle="Italic"/>
+        <TextBlock x:Name="lblLastName" HorizontalAlignment="Left" Height="41" Margin="87,270,0,0" TextWrapping="Wrap" Text="Last Name:" VerticalAlignment="Top" Width="174" FontFamily="Century Gothic" FontSize="32" FontStyle="Italic"/>
+        <TextBox x:Name="txtFirstName" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="296,178,0,0" Height="41" Width="325" FontFamily="Century Gothic" FontSize="21.333" Background="#FFF57C59"/>
+        <TextBox x:Name="txtLastName" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="296,270,0,0" Height="41" Width="325" Background="#FFF57C59"/>
+        <TextBlock x:Name="lblDateOfBirth" HorizontalAlignment="Left" Margin="87,374,0,351" TextWrapping="Wrap" Text="Date of Birth:" Width="213" FontFamily="Century Gothic" FontSize="32" FontStyle="Italic" d:LayoutOverrides="TopPosition, BottomPosition"/>
+        <DatePicker x:Name="dpDOB" Margin="296,374,0,351" VerticalAlignment="Stretch" Width="325" Background="#FFF57C59" RequestedTheme="Dark" d:LayoutOverrides="TopPosition, BottomPosition"/>
+        <TextBlock x:Name="lblGender" HorizontalAlignment="Left" Margin="87,0,0,246" TextWrapping="Wrap" Text="Gender:" Width="174" FontFamily="Century Gothic" FontSize="32" FontStyle="Italic" Height="41" VerticalAlignment="Bottom"/>
+        <ComboBox x:Name="comboBoxGender" HorizontalAlignment="Left" Margin="304,0,0,232" Width="191" Background="#CCF57C59" Height="41" VerticalAlignment="Bottom">
             <ComboBoxItem Content="Female" />
             <ComboBoxItem Content="Male" />
         </ComboBox>
-        <TextBlock x:Name="lblSSN" HorizontalAlignment="Left" Margin="87,0,0,241" TextWrapping="Wrap" Text="SSN:" Width="174" FontFamily="Century Gothic" FontSize="32" FontStyle="Italic" Height="41" VerticalAlignment="Bottom"/>
-        <TextBox x:Name="txtSSN" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Bottom" Margin="304,0,0,241" Height="41" Width="325" FontFamily="Century Gothic" FontSize="21.333" Background="#FFF57C59"/>
-        <Button x:Name="btnSave" Content="SAVE" HorizontalAlignment="Right" Height="96" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="233" Click="btnSave_Click"/>
+        <TextBlock x:Name="lblSSN" HorizontalAlignment="Left" Margin="87,0,0,139" TextWrapping="Wrap" Text="SSN:" Width="174" FontFamily="Century Gothic" FontSize="32" FontStyle="Italic" Height="41" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="txtSSN" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Bottom" Margin="304,0,0,139" Height="41" Width="325" FontFamily="Century Gothic" FontSize="21.333" Background="#FFF57C59"/>
+        <Button x:Name="btnSave" Content="SAVE" HorizontalAlignment="Right" Height="96" Margin="0,0,411,138" VerticalAlignment="Bottom" Width="233" Click="btnSave_Click"/>
     </Grid>
 </code:CodePage>
