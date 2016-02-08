@@ -34,11 +34,20 @@ namespace Codekeeper.Models
         /// <summary>
         /// this property stores the Address of the patient
         /// </summary>
-        public String Address { get; set; }
+        public String Address1 { get; set; }
+
+        public String Address2 { get; set; }
+
+        public String City { get; set; }
+
+        public String State { get; set; }
+
+        public int ZIpCode { get; set; }
 
         /// <summary>
         /// this property stores the medical history of the patient
         /// </summary>
+
         public String History { get; set; }
 
         /// <summary>
