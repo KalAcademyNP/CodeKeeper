@@ -9,6 +9,7 @@ using Windows.UI;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using System.Linq;
 
 namespace Codekeeper
 {
@@ -45,6 +46,11 @@ namespace Codekeeper
             }
             var fileName = string.Format("CodeReport_{0}_{1}_{2}", CurrentPatientInfo.FirstName, CurrentPatientInfo.LastName, CurrentCode.CPRStartTime.ToString()).Replace('/','_').Replace(':','_');
             var file = await sf.CreateFileAsync(fileName);
+
+            var element = Report.GetElementsByTagName("Code").FirstOrDefault();
+            var endTimeNode = element.Attributes[1];
+            endTimeNode.InnerText = CurrentCode.CPREndTime.ToString();
+
             await Report.SaveToFileAsync(file);
             return file.Path;
         }

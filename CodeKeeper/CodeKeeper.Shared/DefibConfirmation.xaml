@@ -12,16 +12,19 @@
     <Grid VerticalAlignment="Center" Background="White">
         <Grid MinHeight="220">
             <StackPanel Margin="0,20,0,0" Orientation="Horizontal">
-                <TextBlock Text="Confirm" Foreground="Black" />
-                <ComboBox Name="cbResuscitationType" SelectionChanged="cbResuscitationType_SelectionChanged" >
-                    <ComboBoxItem Name="ic">IC</ComboBoxItem>
+                <TextBlock Text="Confirm" FontSize="20" Foreground="Black" Margin="0,0,0,174" />
+                <ComboBox Name="cbResuscitationType" FontSize="20" SelectionChanged="cbResuscitationType_SelectionChanged" Margin="0,0,0,174" >
+                    <ComboBoxItem Name="io">IO</ComboBoxItem>
                     <ComboBoxItem Name="iv" IsSelected="True">IV</ComboBoxItem>
                 </ComboBox>
-                <TextBox Text="18G" Foreground="Black" />
-                <TextBlock Text=" placed in "  Foreground="Black"/>
-                <TextBox Text="right VR" Foreground="Black" />
-                <TextBlock Text=" at "  Foreground="Black"/>
-                <TextBlock Name="lblDefibTime" Text=""  Foreground="Black"/>
+                <TextBox Text="18G" FontSize="20" Foreground="Black" Margin="0,0,0,174" />
+                <TextBlock Text=" placed in " FontSize="20" Foreground="Black" Margin="0,0,0,174"/>
+                <ComboBox Name="cbLocation" FontSize="20" SelectionChanged="cbLocation_SelectionChanged" Margin="0,0,0,174" >
+                    <ComboBoxItem Name="rvr">right VR</ComboBoxItem>
+                    <ComboBoxItem Name="lvr" IsSelected="True">left VR</ComboBoxItem>
+                </ComboBox>
+                <TextBlock Text=" at "  FontSize="20" Foreground="Black" Margin="0,0,0,174"/>
+                <TextBlock Name="lblDefibTime"  FontSize="20" Text=""  Foreground="Black" Margin="0,0,0,174"/>
             </StackPanel>
         </Grid>
     </Grid>

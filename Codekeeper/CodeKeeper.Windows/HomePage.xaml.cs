@@ -69,6 +69,7 @@ namespace Codekeeper
             MessageDialog md;
             try
             {
+                CurrentCode.CPREndTime = DateTime.Now;
                 var fileName = await SaveReport();
                 if (!string.IsNullOrEmpty(fileName))
                 {

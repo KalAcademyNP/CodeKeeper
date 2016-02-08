@@ -42,7 +42,7 @@ namespace Codekeeper.Models
 
         public String State { get; set; }
 
-        public int ZIpCode { get; set; }
+        public int ZipCode { get; set; }
 
         /// <summary>
         /// this property stores the medical history of the patient

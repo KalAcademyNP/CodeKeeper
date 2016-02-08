@@ -20,6 +20,7 @@ namespace Codekeeper
     public sealed partial class DefibConfirmation : UserControl
     {
         public string ResusicationType { get; set; }
+        public string Location { get; set; }
         public string TimeRecorded { get; set; }
         public DefibConfirmation()
         {
@@ -38,6 +39,14 @@ namespace Codekeeper
             if (cbResuscitationType != null)
             {
                 ResusicationType = ((ComboBoxItem)cbResuscitationType.SelectedValue).Content.ToString();
+            }
+        }
+
+        private void cbLocation_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cbLocation != null)
+            {
+                Location = ((ComboBoxItem)cbLocation.SelectedValue).Content.ToString();
             }
         }
     }

@@ -6,8 +6,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d" Background="#FFEE1C08">
-    <StackPanel x:Name="outerStack" HorizontalAlignment="Center" Orientation="Vertical">
-    <GridView x:Name="gridView" Margin="0,150,0,0" >
+    <StackPanel Background="#FFEE1C08" x:Name="outerStack" HorizontalAlignment="Center" Orientation="Vertical">
+        <GridView Background="#FFEE1C08" x:Name="gridView" >
         <GridView.ItemsPanel>
             <ItemsPanelTemplate>
                 <ItemsWrapGrid Orientation="Horizontal" MaximumRowsOrColumns="10" />
